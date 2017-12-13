@@ -1,5 +1,8 @@
 import turicreate as tc
 
+# The name of your model
+name = ''
+
 # Load images
 data = tc.image_analysis.load_images('training_images', with_path=True, ignore_failure=True)
 
@@ -7,10 +10,10 @@ data = tc.image_analysis.load_images('training_images', with_path=True, ignore_f
 data['label'] = data['path']
 
 # Save the data for future use
-data.save('elmo-grover.sframe')
+data.save(name + '.sframe')
 
 # Load the data
-data =  tc.SFrame('elmo-grover.sframe')
+data =  tc.SFrame(name + '.sframe')
 
 # Make a train-test split
 train_data, test_data = data.random_split(0.8)
@@ -26,10 +29,10 @@ metrics = model.evaluate(test_data)
 print(metrics['accuracy'])
 
 # Save the model for later use in Turi Create
-model.save('elmo-grover.model')
+model.save(name + '.model')
 
 # Export for use in Core ML
-model.export_coreml('elmo-grover.mlmodel')
+model.export_coreml(name + '.mlmodel')
 
 # Explore interatively
 data.explore()
