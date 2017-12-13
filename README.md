@@ -19,7 +19,7 @@ Install Turi Create in this virutal env (*you might need to use sudo*)
 
 Open up the script train.py and set line 4 to whatever name you would like to call your model.  Ex: name ='elm-grover'
 
-Create a directory to host your training images called 'training_images' and add a folder for each label you will have.  In each folder, but the appropriate training images in there.
+Create a directory to host your training images called 'training_images' and add a folder for each label you will have.  In each folder, put the appropriate training images in there.
 
 Run the script
 `python train.py`
