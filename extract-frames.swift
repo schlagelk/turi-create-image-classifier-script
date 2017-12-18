@@ -1,6 +1,6 @@
 #!/usr/bin/swift
 /*
- This is a macOS Swift 45 command line tool which reads a QuickTime movie file
+ This is a macOS Swift 4 command line tool which reads a QuickTime movie file
  and writes a set of JPEG images of all the frames in the movie.
  
  Run it directly, or compile it and run the executable. If you run it without
