@@ -3,3 +3,5 @@
 !.gitignore
 !.README.md
 !train.py
+!convert-mov-to-jpegs.sh
+!extract-frames.swift
