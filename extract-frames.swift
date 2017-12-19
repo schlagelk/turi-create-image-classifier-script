@@ -1,5 +1,7 @@
 #!/usr/bin/swift
 /*
+ This is taken from a lab at RWDevcon 2017 and I didn't write it.  Just upgraded it and stuff.
+ 
  This is a macOS Swift 4 command line tool which reads a QuickTime movie file
  and writes a set of JPEG images of all the frames in the movie.
  
@@ -129,15 +131,12 @@ class MovieFrameIterator : IteratorProtocol
     let bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
     let width = CVPixelBufferGetWidth(imageBuffer);
     let height = CVPixelBufferGetHeight(imageBuffer);
-//    let x = CVPixelBufferGetPixelFormatType(imageBuffer)
     
     // Get the base address of the pixel buffer.
     let baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
     // Get the data size for contiguous planes of the pixel buffer.
-    //let bufferSize = CVPixelBufferGetDataSize(imageBuffer);   //never used. Eric commented out.
     
     // Create a bitmap image from data supplied by the data provider.
-    //let bitmapInfo:CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.NoneSkipFirst.rawValue | CGBitmapInfo.ByteOrder32Little.rawValue)  //never used - Eric commented out.
     let context = CGContext(data: baseAddress,
                             width: width,
                             height: height,
