@@ -8,8 +8,7 @@ name = ''
 data = tc.image_analysis.load_images('training_images', with_path=True, ignore_failure=True)
 
 # From the path-name, create a label column
-p = os.path.dirname(data['path'][0])
-data['label'] = os.path.basename(p)
+data['label'] = data['path'].apply(lambda path: os.path.basename(os.path.dirname(path)))
 
 # Save the data for future use
 data.save(name + '.sframe')
