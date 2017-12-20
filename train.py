@@ -1,4 +1,5 @@
 import turicreate as tc
+import os
 
 # The name of your model
 name = ''
@@ -7,7 +8,8 @@ name = ''
 data = tc.image_analysis.load_images('training_images', with_path=True, ignore_failure=True)
 
 # From the path-name, create a label column
-data['label'] = data['path']
+p = os.path.dirname(data['path'][0])
+data['label'] = os.path.basename(p)
 
 # Save the data for future use
 data.save(name + '.sframe')
